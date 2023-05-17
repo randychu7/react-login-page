@@ -11,6 +11,15 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
+  useEffect(()=>{
+    console.log('Effect Running!')
+
+    return () =>{
+      console.log("Effect Cleanup");
+    }
+    //The password is a dependency so everytime something is typed it will wun the use effect
+  }, [])
+
 
   //Tells react it will rerun the  setFormIsValid only if there are changes to setForm ,enteredEmail or ri enteredPassword
   useEffect(()=>{
